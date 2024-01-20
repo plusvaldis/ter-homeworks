@@ -24,6 +24,7 @@ resource "random_password" "random_string" {
 resource "docker_image" "nginx"{
   name         = "nginx:latest"
   keep_locally = true
+  force_remove = true
 }
 
 resource "docker_container" "nginx" {
