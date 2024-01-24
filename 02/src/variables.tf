@@ -39,3 +39,41 @@ variable "vms_ssh_public_root_key" {
   default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMKnEk0+gjzck299PyMX6lmIAnLhr5HCVWM376TQbh/u user@pc"
   description = "ssh-keygen -t ed25519"
 }
+####yandex_compute_image####
+variable "vm_web_image" {
+  type = string
+  default = "ubuntu-2004-lts"
+}
+####yandex_compute_instance####
+variable "vm_web_name" {
+  type = string
+  default = "netology-develop-platform-web"
+}
+variable "vm_web_platform_version" {
+  type = string
+  default = "standard-v3"
+}
+variable "vm_web_resources_core" {
+  type = number
+  default = 2
+}
+variable "vm_web_resources_memory" {
+  type = number
+  default = 1
+}
+variable "vm_web_resources_core_fraction" {
+  type = number
+  default = 20
+}
+variable "vm_web_preemptible" {
+  type = bool
+  default = true
+}
+variable "vm_web_interface_nat" {
+  type = bool
+  default = true
+}
+variable "vm_web_serial_port" {
+  type = number
+  default = 1
+}
