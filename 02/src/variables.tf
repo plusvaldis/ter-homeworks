@@ -40,7 +40,7 @@ variable "vms_ssh_public_root_key" {
   description = "ssh-keygen -t ed25519"
 }
 ####yandex_compute_image####
-variable "vm_web_image" {
+variable "image" {
   type = string
   default = "ubuntu-2004-lts"
 }
@@ -76,4 +76,16 @@ variable "vm_web_interface_nat" {
 variable "vm_web_serial_port" {
   type = number
   default = 1
+}
+variable "name" {
+  type=string
+  default="netology-develop"
+}
+variable "web" {
+  type=string
+  default="platform-web"
+}
+variable "db" {
+  type=string
+  default="platform-db"
 }

@@ -15,10 +15,10 @@ resource "yandex_vpc_subnet" "develop-zone-b" {
 }
 
 data "yandex_compute_image" "ubuntu" {
-  family = var.vm_web_image
+  family = var.image
 }
 resource "yandex_compute_instance" "platform" {
-  name        = var.vm_web_name
+  name        = local.name_vm_web
   platform_id = var.vm_web_platform_version
   resources {
     cores         = var.vm_web_resources_core
@@ -45,7 +45,7 @@ resource "yandex_compute_instance" "platform" {
 }
 
 resource "yandex_compute_instance" "vm_db" {
-  name        = var.vm_db_name
+  name        = local.name_vm_db
   platform_id = var.vm_db_platform_version
   resources {
     cores         = var.vm_db_resources_core
