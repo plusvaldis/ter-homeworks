@@ -105,7 +105,7 @@ variable "vms_resources" {
       core_fraction = 20
       platform_version = "standard-v3"
       preemptible = true
-      interface_nat = true
+      interface_nat = false
     }
     "vm_db" = {
       cores = 2
@@ -113,7 +113,7 @@ variable "vms_resources" {
       core_fraction = 20
       platform_version = "standard-v3"
       preemptible = true
-      interface_nat = true
+      interface_nat = false
     }
   }
 }
