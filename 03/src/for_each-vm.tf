@@ -3,7 +3,7 @@ resource "yandex_compute_instance" "db" {
 
   for_each = { for vm in local.vms_bav: "${vm.vm_name}" => vm }
   name = each.key
-  platform_id = "standard-v2"
+  platform_id = each.value.platform
   resources {
         cores           = each.value.cpu
         memory          = each.value.ram
@@ -18,7 +18,7 @@ resource "yandex_compute_instance" "db" {
   }
   network_interface {
     subnet_id = yandex_vpc_subnet.develop.id
-    nat       = true
+    nat       = each.value.nat
   }
 
   metadata = local.ssh_metadata

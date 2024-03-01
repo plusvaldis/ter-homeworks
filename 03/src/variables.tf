@@ -37,3 +37,45 @@ variable "public_key" {
   description = "ssh-keygen -t ed25519"
 }
 
+variable "vms_resources" {
+  type=map(object({
+      name = string
+      cores = number
+      memory = number
+      core_fraction = number
+      platform_version = string
+      preemptible = bool
+      interface_nat = bool
+  }))
+  default = {
+    "vm_count" = {
+      name = "netology-develop-platform-web"
+      cores = 2
+      memory = 1
+      core_fraction = 20
+      platform_version = "standard-v3"
+      preemptible = true
+      interface_nat = true
+    }
+    "vm_storage" = {
+      name = "storage"
+      cores = 2
+      memory = 1
+      core_fraction = 20
+      platform_version = "standard-v3"
+      preemptible = true
+      interface_nat = true
+    }
+  }
+}
+
+variable "image" {
+  type = string
+  default = "ubuntu-2004-lts"
+  description = "image"
+}
+
+variable "interface_nat" {
+  type = bool
+  default = true
+}

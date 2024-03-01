@@ -6,11 +6,11 @@ resource "yandex_compute_disk" "storage_create" {
 
 
 resource "yandex_compute_instance" "storage" {
-  name = "storage"
+  name = var.vms_resources.vm_storage.name
   resources {
-    cores = 2
-    memory = 1
-    core_fraction = 5
+    cores = var.vms_resources.vm_storage.cores
+    memory = var.vms_resources.vm_storage.memory
+    core_fraction = var.vms_resources.vm_storage.core_fraction
   }
 
   boot_disk {
@@ -27,7 +27,7 @@ resource "yandex_compute_instance" "storage" {
   }
   network_interface {
      subnet_id = yandex_vpc_subnet.develop.id
-     nat     = true
+     nat     = var.vms_resources.vm_storage.interface_nat
   }
 
   metadata = local.ssh_metadata
