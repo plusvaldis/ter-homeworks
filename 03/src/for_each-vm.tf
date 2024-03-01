@@ -24,22 +24,3 @@ resource "yandex_compute_instance" "db" {
   metadata = local.ssh_metadata
   
 }
-
-locals {
-  vms_bav = [
-        {
-        vm_name = "main"
-        cpu     = 4
-        ram     = 4
-        frac    = 20
-        disk    = 10
-        },
-        {
-        vm_name = "replica"
-        cpu     = 2
-        ram     = 2
-        frac    = 5
-        disk    = 20
-        }
-  ]
-}
