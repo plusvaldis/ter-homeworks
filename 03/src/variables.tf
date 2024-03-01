@@ -71,7 +71,3 @@ variable "image" {
   description = "image"
 }
 
-variable "interface_nat" {
-  type = bool
-  default = true
-}
