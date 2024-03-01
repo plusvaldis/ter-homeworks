@@ -10,3 +10,4 @@
 
 # own secret vars store.
 personal.auto.tfvars
+id_ed25519.pub

@@ -39,7 +39,7 @@ depends_on = [yandex_compute_instance.storage, local_file.inventory_cfg]
       always_run         = "${timestamp()}" 
  # при изменении содержимого playbook файла
       playbook_src_hash  = file("${abspath(path.module)}/test.yml") 
-      ssh_public_key     = var.public_key # при изменении переменной
+      ssh_public_key     = file("${abspath(path.module)}/id_ed25519.pub") # при изменении переменной
     }
 
 }
