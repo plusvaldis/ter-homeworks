@@ -1,0 +1,11 @@
+[example]
+netology-develop-platform-web-1   ansible_host=62.84.125.229   fqdn=fhm96r86a0an7ptlnhm4.auto.internal
+netology-develop-platform-web-2   ansible_host=158.160.112.108   fqdn=fhmhk5ipholh7u2q0c80.auto.internal
+
+[db]
+main   ansible_host=158.160.127.55    fqdn=fhmf0cnas8l3ov0h22hj.auto.internal
+replica   ansible_host=51.250.87.98    fqdn=fhmuv5p9an6lpm7pboks.auto.internal
+
+[storage]
+storage   ansible_host=158.160.125.24    fqdn=fhms5kpg5vlshrpil10r.auto.internal
+
